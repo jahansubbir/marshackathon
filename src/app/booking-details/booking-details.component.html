@@ -1,0 +1,18 @@
+<div class="container">
+
+    <table class="table table-hover">
+        <thead>
+            <th>Booking No</th>
+            <th>Load Port</th>
+            <th>ETD</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let shipment of shipments">
+                <td>{{shipment.booking_number}}</td>
+                
+                <td>{{shipment.lopfi_location_name}}</td>
+                <td>{{shipment.origin_departure_date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

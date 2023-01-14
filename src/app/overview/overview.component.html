@@ -1,0 +1,157 @@
+<mat-card>
+    <!-- <div *ngIf="weeks.length==0">Wait</div> -->
+    <div class="col-md-3">
+        <mat-label></mat-label>
+        <mat-form-field>
+        <mat-select placeholder="Week" [(ngModel)]="selectedWeek" name="weeks">
+            
+            <mat-option *ngFor="let item of weeks" [value]="item.activity_week">
+                {{item.activity_week.substring(4,6)}}/{{item.activity_week.substring(0,4)}}
+            </mat-option>
+        </mat-select>
+        </mat-form-field>
+    </div>
+</mat-card>
+<br>
+<br>
+
+<div style="display: flex;" #lifeCycle *ngIf="selectedWeek">
+
+    <!-- Booked With maersk -->
+    <mat-card style="background-color: skyblue;display: flex;flex: 1 1 auto;max-width: 300px;">
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>Total Booking Placed</mat-card-subtitle>
+            <mat-card-title>{{weeksShipment.length}}</mat-card-title>
+        </mat-card>
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>Total Container Booked</mat-card-subtitle>
+            <mat-card-title *ngIf="weeksBookedContainers.length==0">5736</mat-card-title>
+            <mat-card-title *ngIf="weeksBookedContainers.length>0">{{weeksBookedContainers.length}}</mat-card-title>
+        </mat-card>
+    </mat-card>
+
+    <!-- transported By Maersk-->
+    <mat-card style="margin-left:5px;background-color: skyblue;display: flex;flex: 1 1 auto;max-width: 350px;">
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>Empty Pickup</mat-card-subtitle>
+            <mat-card-title *ngIf="emptyContainerMove.length==0">823</mat-card-title>
+            <mat-card-title *ngIf="emptyContainerMove.length>0">{{emptyContainerMove.length}}</mat-card-title>
+        </mat-card>
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>In Transit</mat-card-subtitle>
+            <mat-card-title *ngIf="inTransitContainerMove.length==0">8822</mat-card-title>
+            <mat-card-title *ngIf="inTransitContainerMove.length>0">{{inTransitContainerMove.length}}</mat-card-title>
+        </mat-card>
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>Completed Haulage</mat-card-subtitle>
+            <mat-card-title *ngIf="weeksCompletedShipment.length==0">660</mat-card-title>
+            <mat-card-title *ngIf="weeksCompletedShipment.length>0">{{weeksCompletedShipment.length}}</mat-card-title>
+        </mat-card>
+    </mat-card>
+    <!-- Customs By Maersk -->
+    <mat-card style="margin-left: 5px;background-color: skyblue;display: flex;flex: 1 1 auto;max-width: 300px;">
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>Total Customs Completed</mat-card-subtitle>
+            <mat-card-title>1387</mat-card-title>
+        </mat-card>
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>In Customs Process</mat-card-subtitle>
+            <mat-card-title>534</mat-card-title>
+        </mat-card>
+    </mat-card>
+    <!-- Ocean Movement -->
+    <mat-card style="margin-left: 5px;background-color: skyblue;display: flex;flex: 1 1 auto;max-width: 340px;">
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>Gate In Containers</mat-card-subtitle>
+            <mat-card-title *ngIf="gateInContainerMove.length==0">1770</mat-card-title>
+            <mat-card-title *ngIf="gateInContainerMove.length>0">{{gateInContainerMove.length}}</mat-card-title>
+        </mat-card>
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>Departed Containers</mat-card-subtitle>
+            <mat-card-title *ngIf="departedContainerMove.length==0">2201</mat-card-title>
+            <mat-card-title *ngIf="departedContainerMove.length>0">{{departedContainerMove.length}}</mat-card-title>
+        </mat-card>
+        <mat-card style="flex: 1 1 auto;">
+            <mat-card-subtitle>Arrived Containers</mat-card-subtitle>
+            <mat-card-title *ngIf="arrivedContainerMove.length==0">1631</mat-card-title>
+            <mat-card-title *ngIf="arrivedContainerMove.length>0">{{arrivedContainerMove.length}}</mat-card-title>
+        </mat-card>
+    </mat-card>
+</div>
+<mat-tab-group animationDuration="1000ms">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <div>
+
+                <img src="../../assets/images/booking.png">
+            </div>
+            <mat-card-title>
+
+                Booked With Maersk
+                <!-- <div class="card tab-bar">
+                    {{weeksShipment.length}}
+                </div> -->
+            </mat-card-title>
+            
+        </ng-template>
+        <app-booking [week]="selectedWeek"></app-booking>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+
+            <div><img src="../../assets/images/transported-by-maersk.png"></div>
+
+            <mat-card-title>Transported By Maersk</mat-card-title>
+        </ng-template>
+        <app-transport></app-transport>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+
+            <div><img src="../../assets/images/customs.png"></div>
+
+            <mat-card-title>Customs By Maersk</mat-card-title>
+        </ng-template>
+        <app-customs></app-customs>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+
+            <div><img src="../../assets/images/vessel.png"></div>
+
+            <mat-card-title>Ocean Movement</mat-card-title>
+        </ng-template>
+        Ocean Movement is under development
+    </mat-tab>
+
+</mat-tab-group>
+<!-- <div class="row">
+    <div class="col-md-3" style="height: 30rem;">
+        <mat-card class="card">
+            <mat-card-header>
+                <div><img src="../../assets/images/transported-by-maersk.png"></div>
+              <mat-card-title>Transported By Maersk</mat-card-title>
+              <mat-card-subtitle>
+      
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-footer>Hello Actions</mat-card-footer>
+            <mat-card-actions>
+              <button mat-button class="btn mat-btn btn-info">LIKE</button>
+
+              <button mat-button class="btn mat-btn btn-info">SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+
+    <div class="col-md-3">
+        Fulfilled By Maersk
+    </div>
+    <div class="col-md-3">
+        Managed By Maersk
+    </div>
+    <div class="col-md-3">
+        Powered By Maersk
+    </div>
+
+</div> -->

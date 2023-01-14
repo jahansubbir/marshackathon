@@ -1,0 +1,42 @@
+<div class="row" style="align-items: center;">
+    <div class="card" style="align-items: center;">
+        <div class="col-sm-4" style="margin-top: 100px;">
+            <form class="d-flex input-group w-auto" style="margin-top: -50px">
+                <input type="search" class="form-control" placeholder="container number" aria-label="search" [(ngModel)]="containerNo" name="containerNo" />
+                <button class="btn btn-outline-info" type="button" (click)="search(containerNo)">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="oceanRoot">
+    {{oceanRoot.origin.city}}
+</div>
+<div *ngIf="ldbRoot">
+    <table class="table table-striped table-hover">
+<thead>
+    <tr>
+        <th>Container</th>
+        <th>Date</th>
+        <th>Location</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let track of ldbRoot.object.containerFormList[0].trackingInfoList">
+        <td>{{track.containerNumber}}</td>
+        <td>{{track.timestampTimezone}}</td>
+        <td>{{track.currentLocation}}</td>
+        
+    </tr>
+    
+</tbody>
+<tfoot *ngIf="oceanRoot" >
+    <tr *ngFor="let location of oceanRoot.containers[0].locations">
+        
+    </tr>
+</tfoot>
+
+    </table>
+</div>

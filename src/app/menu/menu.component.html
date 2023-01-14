@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#a7d2eb;">
+            <!--container wrapper-->
+            <div class="container-fluid">
+                <a class="navbar-brand" 
+                [routerLink]="['/home']">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAAAeCAYAAAALkH3GAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMjlmMjA0My00MzBlLTE1NDYtOWEwZS0wY2MxMDljNTQ2YjIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MkNCQ0U5M0NGODYwMTFFOEJBMDk5RTE1MDdFMzU2MDciIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MkNCQ0U5M0JGODYwMTFFOEJBMDk5RTE1MDdFMzU2MDciIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjgxZjFkZjI4LWJhYmQtNDk0ZS04YjQ4LWRhOGZkYTI1YTM5NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowMjlmMjA0My00MzBlLTE1NDYtOWEwZS0wY2MxMDljNTQ2YjIiLz4gPC9y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"
+                        class="me-2" height="20" alt="Maersk Logo" loading="lazy" />
+                    <small class="brand" style="color: white;">mars</small>
+                </a>
+                <!--Toggle button-->
+                <button class="navbar-toggler" type="button" (click)="basicNavbar.toggle()" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!--collapsible wrpper-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" mdbCollapse
+                    #basicNavbar="mdbCollapse">
+                    <!--left Links-->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" 
+                            [routerLink]="['/home']"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact:true}"
+                            >Home</a>
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a [routerLink]="['/overview']" class="nav-link" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact:true}">Overview</a>
+                            <!-- <a class="nav-link" router aria-current="page">
+                                <span></span>
+                            </a> -->
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['/summary']" class="nav-link" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact:true}">Summary</a>
+                        </li>
+                    </ul>
+                    <!--left Links-->
+                    <!--search Form-->
+                    <div *ngIf="isAuthenticated()"><a (click)="logout()" class="nav-link">Log out</a></div>
+                    <div class="col-xs-6" *ngIf="!isAuthenticated()">
+                       <a [routerLink]="['/login']" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Login</a>
+                        
+
+                    </div>
+                    
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</div>

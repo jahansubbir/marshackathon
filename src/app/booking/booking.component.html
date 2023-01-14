@@ -1,0 +1,35 @@
+
+<br>
+
+<div style="display: flex;">
+    <mat-card style="flex:1 1 auto;">
+        <mat-card-header>
+
+            <mat-card-title>Boókings Uitlized</mat-card-title>
+            <mat-card-title>
+                <b> {{bookingCount}}</b>
+            </mat-card-title>
+
+        </mat-card-header>
+        <!-- <mat-card-footer><img [src]="bookingImgPath"></mat-card-footer> -->
+        <mat-card-actions>
+            <button mat-button class="btn mat-btn btn-info" (click)="getDetails()">Details</button>
+
+        </mat-card-actions>
+    </mat-card>
+    <!-- <mat-card style="flex:1 1 auto;">
+        <mat-card-header>
+            <mat-card-title>Bookings need Action</mat-card-title>
+            <mat-card-title> <b>{{containerCount}}</b></mat-card-title>
+        </mat-card-header>
+        <mat-card-footer><img [src]="containerImgPath"></mat-card-footer>
+        <mat-card-actions>
+            <button mat-button class="btn mat-btn btn-info" (click)="getDetails()">Details</button>
+
+        </mat-card-actions>
+    </mat-card> -->
+</div>
+<!-- <div class="hidden">{{weeksActiveBooking}}</div> -->
+<div *ngIf="details">
+    <app-booking-details [shipments]="weeksActiveBooking"></app-booking-details>
+</div>

@@ -1,0 +1,168 @@
+<div class="container container-panel">
+    <div class="card panel-header">Overview</div>
+    <br>
+    <!-- <div>
+        <mat-select placeholder="Week" [(ngModel)]="selectedWeek" name="weeks">
+            <mat-option *ngFor="let item of weeks" [value]="item.activity_week">
+                {{item.activity_week.substring(4,6)}}/{{item.activity_week.substring(0,4)}}
+            </mat-option>
+        </mat-select>
+    
+    </div> -->
+    <div class="row">
+        <div>
+            <div style="display: flex;">
+                <mat-card class="example-card" style="flex:  1 1;margin-left: 5px;">
+                    <mat-card-header style="display: flex;">
+                        <mat-card-title-group>
+
+                            <div style="float: left;">
+                                <mat-card-title style="margin-left: -45px;"><b style="color: red;font-size: 26px;">64</b> Containers reaching load port.</mat-card-title>
+                                <mat-card-subtitle style="margin-left:0px ;"></mat-card-subtitle>
+                            </div>
+                            <!-- <div style="float:right;margin-left:100px;margin-right: 0px;">
+                                <mat-card-title></mat-card-title>
+                                <mat-card-subtitle class="col-md-4"></mat-card-subtitle>
+                            </div> -->
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content class="col-lg-12">
+                        <p style="margin-left: -10px;">
+                            <br>
+                            Please prepare customs document.
+                        </p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <img mat-card-sm-image src="../../assets/images/vessel.svg">
+                    </mat-card-footer>
+                </mat-card>
+                <!-- next card -->
+                <mat-card class="example-card" style="flex:  1 1;margin-left: 5px;">
+                    <mat-card-header style="display: flex;">
+                        <mat-card-title-group>
+
+                            <div style="float: left;">
+                                <mat-card-title style="margin-left: -45px;"><b style="color: red;font-size: 26px;">32</b>
+                                    Containers are arriving. </mat-card-title>
+                                <mat-card-subtitle></mat-card-subtitle>
+                            </div>
+                            <div style="float:right;margin-left:100px;margin-right: 0px;">
+                                <mat-card-title></mat-card-title>
+                                <mat-card-subtitle class="col-md-4"></mat-card-subtitle>
+                            </div>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content class="col-lg-12">
+                        <br>
+                        <p style="margin-left: -10px;">
+                        Need Trucking service?
+                        Click <a class="link">here</a></p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <img mat-card-sm-image src="../../assets/images/container-truck.svg">
+                    </mat-card-footer>
+                </mat-card>
+                <!-- next card -->
+                <mat-card class="example-card" style="flex:  1 1;margin-left: 5px;">
+                    <mat-card-header style="display: flex;">
+                        <mat-card-title-group>
+
+                            <div style="float: left;">
+                                <mat-card-title style="margin-left: -45px;"><b style="color: red;font-size: 26px;">12</b>
+                                    Bookings unutilized. </mat-card-title>
+                                <mat-card-subtitle></mat-card-subtitle>
+                            </div>
+                            <div style="float:right;margin-left:100px;margin-right: 0px;">
+                                <mat-card-title></mat-card-title>
+                                <mat-card-subtitle class="col-md-4"></mat-card-subtitle>
+                            </div>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content class="col-lg-12">
+                        <p style="margin-left: -10px;">
+                           <br>
+                            Please arrange to pickup the containers before the Booking validity expires.
+                        </p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <img mat-card-sm-image src="../../assets/images/si.png">
+                    </mat-card-footer>
+                </mat-card>
+
+
+            </div>
+        </div>.
+        <br>
+        <app-overview></app-overview>
+        <!-- <div class="card card-stack btn" (click)="BookingDetails()">
+            <div *ngIf="!countOfWeeksReceivedShipment">Loading data...
+
+            </div>
+
+            <div class="card-body row" *ngIf="countOfWeeksReceivedShipment">
+                <div class="col-lg-12">Containers are reaching at the Port.<b>Please prepare Customs Documents</b></div>
+                <div><img src="../../assets/images/container-truck.svg" height="60px" /></div>
+                <div class="">Text</div>
+                <div>Data</div>
+
+                <div style="font-weight: bold;" class="col-lg-12"></div>
+
+
+                <div>
+
+                    <div class="row">
+                        <div class="col-sm-4" style="text-align: left;">When</div>
+                        <div class="col-sm-6" style="text-align: left;"><b> Week 4</b></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4" style="text-align: left;">Where</div>
+                        <div class="col-sm-4" style="text-align: left;"><b> MUNDRA</b></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4" style="text-align: left;">How Many</div>
+                        <div class="col-sm-4" style="text-align: left;"><b>{{countOfWeeksReceivedShipment}}</b></div>
+                    </div>
+                </div>
+            </div>
+
+        </div> -->
+
+        <!-- <div class="card card-stack btn">
+
+            <div class="card-body row">
+                <div style="font-weight: bold;" class="col-lg-12">7 Containers are being discharged tomorrow.</div>
+                <div style="font-weight: bold;" class="col-lg-12">Do you need Truck to your premises? We're there for
+                    you.</div>
+                <div>Click <a class="link">here</a> to request trailer(s)</div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <div class="card card-stack btn">
+
+            <div class="card-body row">
+                <div style="font-weight: bold;" class="col-lg-12">35 Booking has been placed.</div>
+                <div style="font-weight: bold;" class="col-lg-12">Please Submit FCR.</div>
+
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <div class="card card-stack btn">
+
+            <div class="card-body row">
+
+                <div style="font-weight: bold;" class="col-lg-12">7 Containers has reached in Mumbai Port on 30-Dec-2022
+                </div>
+                <div style="font-weight: bold;" class="col-lg-12">Free time is expiring in 3 days</div>
+
+                <div>
+
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+</div>
